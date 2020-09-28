@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+
+/*Used to seperate the cell elements between each other */
+
+table {
+    border-collapse: separate;
+    border-spacing: 20px;
+}
+
+table#game td {
+    height: 100px;
+    width: 100px;
+    color: white;
+    border: solid greenyellow 2px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 60pt;
+}
+
+button#restart {
+    margin-bottom: 35px;
+    padding: 8px;
+    background-color: lightslategray;
+    font-size: 20pt;
+    color: white;
+    border-radius: 15px;
+}
