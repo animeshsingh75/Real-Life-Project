@@ -119,7 +119,7 @@ function gameloop() {
 init();
 
 function callgameloop() {
-    f = setInterval(gameloop, 100);
+    f = setInterval(gameloop, 125);
 }
 callgameloop();
 
