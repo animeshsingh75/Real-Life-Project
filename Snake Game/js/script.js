@@ -60,6 +60,13 @@ function init() {
                 game_over = true;
             }
             console.log(game_over);
+            console.log(this.cells.length);
+            for (var i = 1; i < this.cells.length; i++) {
+                if (this.cells[0].y == this.cells[i].y && this.cells[0].x == this.cells[i].x) {
+                    console.log("Collided");
+                    game_over = true;
+                }
+            }
         }
 
     };
