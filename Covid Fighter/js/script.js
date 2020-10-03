@@ -1,13 +1,13 @@
 function load_images() {
     //player,virus,gem
     enemy_image = new Image;
-    enemy_image.src = "images/v1.png";
+    enemy_image.src = "images/v2.png";
 
     player_img = new Image;
     player_img.src = "images/superhero.png";
 
     gem_image = new Image;
-    gem_image.src = "images/gemm.png";
+    gem_image.src = "images/gem.png";
 }
 
 
@@ -68,24 +68,38 @@ function init() {
 }
 
 function isOverlapgem(rect1, rect2) {
-    if (rect1.x < rect2.x + 25 + rect2.w &&
-        rect1.x + rect1.w > rect2.x + 25 &&
+    if (rect1.x < rect2.x + rect2.w + 30 &&
+        rect1.x + rect1.w > rect2.x + 28 &&
         rect1.y < rect2.y + rect2.h &&
         rect1.y + rect1.h > rect2.y) {
         return true;
     } else {
         return false;
     }
+
+
+
 }
 
 function isOverlap(rect1, rect2) {
-    if (rect1.x < rect2.x + rect2.w &&
-        rect1.x + rect1.w > rect2.x &&
-        rect1.y < rect2.y + rect2.h &&
-        rect1.y + rect1.h > rect2.y) {
-        return true;
+    if (rect2.speed > 0) {
+        if (rect1.x - 7 < rect2.x + rect2.w &&
+            rect1.x - 7 + rect1.w > rect2.x &&
+            rect1.y < rect2.y - 13 + rect2.h &&
+            rect1.y + rect1.h > rect2.y - 13) {
+            return true;
+        } else {
+            return false;
+        }
     } else {
-        return false;
+        if (rect1.x - 7 < rect2.x + rect2.w &&
+            rect1.x - 7 + rect1.w > rect2.x &&
+            rect1.y < rect2.y + 13 + rect2.h &&
+            rect1.y + rect1.h > rect2.y + 13) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 
@@ -103,7 +117,7 @@ function draw() {
 function update() {
     if (player.moving == true) {
         player.x += player.speed;
-        player.health += 20;
+        player.health += 10;
     }
     for (let i = 0; i < enemy.length; i++) {
         if (isOverlap(player, enemy[i])) {
