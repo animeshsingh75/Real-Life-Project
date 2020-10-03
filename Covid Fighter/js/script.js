@@ -131,7 +131,7 @@ function update() {
     }
     if (isOverlapgem(player, gem)) {
         console.log("You won the game");
-        alert("You won the game");
+        alert("You won the game.Score: " + player.health);
         game_over = true;
         return;
     }
