@@ -21,11 +21,11 @@ let config = {
         update: update
     }
 };
-
+score = 0;
 let game = new Phaser.Game(config);
 let player_config = {
     player_speed: 150,
-    player_jump: -635
+    player_jump: -635,
 }
 
 function preload() {
@@ -33,6 +33,7 @@ function preload() {
     this.load.image("sky", "images/background.png");
     this.load.spritesheet("dude", "images/dude.png", { frameWidth: 32, frameHeight: 48 });
     this.load.image("apple", "images/apple.png");
+    this.load.image("ray", "images/ray.png");
 }
 
 function create() {
@@ -42,11 +43,51 @@ function create() {
     background.setOrigin(0, 0);
     background.displayWidth = w;
     background.displayHeight = h;
+    background.depth = -2;
+    let rays = [];
+    for (let i = -10; i <= 10; i++) {
+        let ray = this.add.sprite(w / 2, h - 128, 'ray');
+        ray.displayHeight = 1.5 * h;
+        ray.setOrigin(0.5, 1);
+        ray.alpha = 0.2;
+        ray.angle = i * 20;
+        ray.depth = -1;
+        rays.push(ray);
+    }
+    this.tweens.add({
+        targets: rays,
+        props: {
+            angle: {
+                value: "+=20",
+            }
+        },
+        duration: 8000,
+        repeat: -1
+    });
     let ground = this.add.tileSprite(0, h - 128, w, 128, 'ground');
     ground.setOrigin(0, 0);
     this.player = this.physics.add.sprite(100, 100, 'dude', 4);
     console.log(this.player);
     this.player.setBounce(0.5);
+    this.player.setCollideWorldBounds(true);
+    this.anims.create({
+        key: 'left',
+        frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
+        frameRate: 10,
+        repeat: -1
+    });
+    this.anims.create({
+        key: 'center',
+        frames: [{ key: 'dude', frame: 4 }],
+        frameRate: 10,
+
+    });
+    this.anims.create({
+        key: 'right',
+        frames: this.anims.generateFrameNumbers('dude', { start: 5, end: 8 }),
+        frameRate: 10,
+        repeat: -1
+    });
     this.cursors = this.input.keyboard.createCursorKeys();
     let fruits = this.physics.add.group({
         key: "apple",
@@ -69,18 +110,32 @@ function create() {
     this.physics.add.collider(platforms, this.player);
     // this.physics.add.collider(ground, fruits);
     this.physics.add.collider(platforms, fruits);
+
+    this.physics.add.overlap(this.player, fruits, eatFruit, null, this);
+
+    this.cameras.main.setBounds(0, 0, w, h);
+    this.physics.world.setBounds(0, 0, 2 * w, 2 * h);
+    this.cameras.main.startFollow(this.player, true, true);
+    this.cameras.main.setZoom(1.5);
 }
 
 function update() {
     if (this.cursors.left.isDown) {
         this.player.setVelocityX(-player_config.player_speed);
+        this.player.anims.play('left', true);
     } else if (this.cursors.right.isDown) {
         this.player.setVelocityX(player_config.player_speed);
+        this.player.anims.play('right', true);
     } else {
         this.player.setVelocityX(0);
+        this.player.anims.play('center');
     }
     if (this.cursors.up.isDown && this.player.body.touching.down) {
         this.player.setVelocityY(player_config.player_jump);
     }
+    console.log(score);
+}
 
+function eatFruit(player, fruit) {
+    fruit.disableBody(true, true);
 }
