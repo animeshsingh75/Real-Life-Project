@@ -82,7 +82,7 @@ function spinwheel() {
             duration: 4000,
             callbackScope: this,
             onComplete: function() {
-                this.game_text.setText("You Won Something " + prizes_config.prizes_names[idx]);
+                this.game_text.setText("You Won " + prizes_config.prizes_names[idx]);
                 this.click = 0;
             }
         });
