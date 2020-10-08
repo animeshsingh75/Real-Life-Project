@@ -20,8 +20,10 @@ let config = {
         create: create,
         update: update
     }
+
 };
-score = 0;
+
+
 let game = new Phaser.Game(config);
 let player_config = {
     player_speed: 150,
@@ -34,6 +36,9 @@ function preload() {
     this.load.spritesheet("dude", "images/dude.png", { frameWidth: 32, frameHeight: 48 });
     this.load.image("apple", "images/apple.png");
     this.load.image("ray", "images/ray.png");
+    this.load.spritesheet('fullscreen', 'images/fullscreen.png', { frameWidth: 64, frameHeight: 64 });
+    this.score = 0;
+    this.scoreText = null;
 }
 
 function create() {
@@ -107,6 +112,9 @@ function create() {
     // ground.body.allowGravity = false;
     // console.log(ground);
     // ground.body.immovable = true;
+    this.scoreText = this.add.text(140, 110).setText('Score: 0').setScrollFactor(0);
+    // this.scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#fff' });
+    // this.scoreText.setScrollFactor(0);
     this.physics.add.collider(platforms, this.player);
     // this.physics.add.collider(ground, fruits);
     this.physics.add.collider(platforms, fruits);
@@ -116,7 +124,35 @@ function create() {
     this.cameras.main.setBounds(0, 0, w, h);
     this.physics.world.setBounds(0, 0, 2 * w, 2 * h);
     this.cameras.main.startFollow(this.player, true, true);
+    // this.cameras.main.startFollow(this.scoreText, true, true);
     this.cameras.main.setZoom(1.5);
+    // var button = this.add.image(800 - 16, 16, 'fullscreen', 0).setOrigin(1, 0).setInteractive();
+    // button.on('pointerup', function() {
+
+    //     if (this.scale.isFullscreen) {
+    //         button.setFrame(0);
+
+    //         this.scale.stopFullscreen();
+    //     } else {
+    //         button.setFrame(1);
+
+    //         this.scale.startFullscreen();
+    //     }
+
+    // }, this);
+    // var FKey = this.input.keyboard.addKey('F');
+
+    // FKey.on('down', function() {
+
+    //     if (this.scale.isFullscreen) {
+    //         button.setFrame(0);
+    //         this.scale.stopFullscreen();
+    //     } else {
+    //         button.setFrame(1);
+    //         this.scale.startFullscreen();
+    //     }
+
+    // }, this);
 }
 
 function update() {
@@ -133,9 +169,15 @@ function update() {
     if (this.cursors.up.isDown && this.player.body.touching.down) {
         this.player.setVelocityY(player_config.player_jump);
     }
-    console.log(score);
+    console.log(this.score);
 }
 
 function eatFruit(player, fruit) {
     fruit.disableBody(true, true);
+    this.score += 10;
+    this.scoreText.setText('Score: ' + this.score);
+    if (this.score == 80) {
+        window.alert('Game Over');
+
+    }
 }
