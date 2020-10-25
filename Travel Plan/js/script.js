@@ -107,7 +107,6 @@ onload = function() {
     };
 
     solve.onclick = function() {
-        // Create graph from data and set to display
         temptext.style.display = "none";
         temptext2.style.display = "none";
         container2.style.display = "inline";
@@ -189,24 +188,14 @@ onload = function() {
     function solveData() {
 
         const data = curr_data;
-
-        // Creating adjacency list matrix graph from question data
         const graph = createGraph(data);
-
-        // Applying djikstra from src and dst
         let dist1 = djikstra(graph, V, src - 1);
         let dist2 = djikstra(graph, V, dst - 1);
-
-        // Initialise min_dist to min distance via bus from src to dst
         let mn_dist = dist1[dst - 1][0];
-
-        // See if plane should be used
         let { plane, p1, p2 } = shouldTakePlane(data['edges'], dist1, dist2, mn_dist);
-
         let new_edges = [];
         if (plane !== 0) {
             new_edges.push({ arrows: { to: { enabled: true } }, from: p1 + 1, to: p2 + 1, color: 'green', label: String(plane) });
-            // Using spread operator to push elements of result of pushEdges to new_edges
             new_edges.push(...pushEdges(dist1, p1, false));
             new_edges.push(...pushEdges(dist2, p2, true));
         } else {
