@@ -21,7 +21,6 @@ onload = function() {
             this.$button = $('button');
             this.$textarea = $('#message-to-send');
             this.$chatHistoryList = this.$chatHistory.find('ul');
-            this.
         },
         bindEvents: function() {
             this.$button.on('click', this.addMessage.bind(this));
