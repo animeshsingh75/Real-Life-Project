@@ -1,6 +1,6 @@
 onload = function() {
     var chat = {
-        messageToSend: '',
+        messageToSend: 'hi',
         messageResponses: [
             'Why did the web developer leave the restaurant? Because of the table layout.',
             'How do you comfort a JavaScript bug? You console it.',
