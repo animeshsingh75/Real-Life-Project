@@ -1,0 +1,25 @@
+{
+    "child_msg": ["Want to hear a joke ?", "What about some news ?", "Wanna get motivated ?", "Terminate chat"],
+    "children": [{
+
+            "message": "getJoke()",
+            "type": "function"
+        },
+        {
+            "child_msg": ["National News", "World News", "Terminate chat"],
+            "children": [{
+                    "message": "getNewsIn()",
+                    "type": "function"
+                },
+                {
+                    "message": "getNews()",
+                    "type": "function"
+                }
+            ]
+        },
+        {
+            "message": "motivation()",
+            "type": "function"
+        }
+    ]
+}
