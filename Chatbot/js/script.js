@@ -1,14 +1,6 @@
 onload = function() {
     var chat = {
         messageToSend: '',
-        messageResponses: [
-            'Why did the web developer leave the restaurant? Because of the table layout.',
-            'How do you comfort a JavaScript bug? You console it.',
-            'An SQL query enters a bar, approaches two tables and asks: "May I join you?"',
-            'What is the most used language in programming? Profanity.',
-            'What is the object-oriented way to become wealthy? Inheritance.',
-            'An SEO expert walks into a bar, bars, pub, tavern, public house, Irish pub, drinks, beer, alcohol'
-        ],
         init: async function() {
             this.chatTree = new ChatTree();
             await this.chatTree.init();
@@ -131,7 +123,6 @@ class ChatTree {
         return resp;
     }
 }
-motivation();
 async function getJoke() {
     const response = await fetch('https://api.icndb.com/jokes/random');
     const jsonResp = await response.json();
@@ -149,6 +140,12 @@ async function getNews() {
     return jsonResp;
 }
 async function motivation() {
+    const response = await fetch('https://type.fit/api/quotes');
+    const jsonResp = await response.json();
+
+    return jsonResp;
+}
+async function weather() {
     const response = await fetch('https://type.fit/api/quotes');
     const jsonResp = await response.json();
 
