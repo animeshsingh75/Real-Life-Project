@@ -109,12 +109,14 @@ class ChatTree {
                     data = data.value.joke;
                 } else if (this.chat_tree['message'] === "motivation()") {
                     data = await eval(this.chat_tree['message']);
-                    console.log(data[Math.floor(Math.random() * data.length)].text);
-                    data = "<blockquote><p>" + data[Math.floor(Math.random() * data.length)].text + " </p></blockquote>" + "<cite>- " + data[Math.floor(Math.random() * data.length)].author + "</cite>"
+                    let randnum = Math.floor(Math.random() * data.length);
+                    data = "<blockquote><p>" + data[randnum].text + " </p></blockquote>" + "<cite>- " + data[randnum].author + "</cite>"
                 } else {
                     data = await eval(this.chat_tree['message']);
-                    console.log(data.articles[0].source.name);
-                    data = "<a href='" + data.articles[0].url + "'target='_blank' style=>" + data.articles[0].title + "</a><br><br>" + "<img class='center' src='" + data.articles[0].image + "'>" + "<br><cite>" + data.articles[0].source.name + "</cite>";
+                    let randnum = Math.floor(Math.random() * data.articles.length);
+                    console.log(data.articles[0]);
+                    data = "<a href='" + data.articles[randnum].url + "'target='_blank'>" + data.articles[randnum].title + "</a><br><br>" + "<img class='center' src='" +
+                        data.articles[randnum].image + "'>" + "<br><a href='" + data.articles[randnum].source.url + "'target='_blank'><cite>-" + data.articles[randnum].source.name + "</cite></a>";
                 }
             } else {
                 data = this.chat_tree['message'];
@@ -131,7 +133,7 @@ class ChatTree {
 }
 motivation();
 async function getJoke() {
-    const response = await fetch('http://api.icndb.com/jokes/random');
+    const response = await fetch('https://api.icndb.com/jokes/random');
     const jsonResp = await response.json();
     return jsonResp;
 }
