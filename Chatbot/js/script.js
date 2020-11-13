@@ -13,6 +13,7 @@ onload = function() {
             this.$button = $('button');
             this.$textarea = $('#message-to-send');
             this.$chatHistoryList = this.$chatHistory.find('ul');
+            this.$leftside = $('#chatdiv2');
         },
         bindEvents: function() {
             this.$button.on('click', this.addMessage.bind(this));
@@ -60,7 +61,6 @@ onload = function() {
     };
     chat.init();
 };
-
 class ChatTree {
     constructor() {
 
@@ -69,7 +69,6 @@ class ChatTree {
         const data = await this.reset();
         this.chat_tree = data;
         this.firstMsg = true;
-        console.log("inside done");
         return "Chat has now been terminated. Send hi to begin chat again !";
     }
     async reset() {
@@ -83,7 +82,7 @@ class ChatTree {
             this.firstMsg = false;
             resp += "Hey there buddy<br>";
         } else {
-            if (("message" in this.chat_tree) && (input.trim() === "Reset")) {
+            if (("message" in this.chat_tree) && ((input.trim() === "Reset") || (input.trim() === "reset"))) {
                 return this.init();
             }
             if (parseInt(input) - 1 === this.chat_tree['children'].length) {
@@ -103,6 +102,9 @@ class ChatTree {
                     data = await eval(this.chat_tree['message']);
                     let randnum = Math.floor(Math.random() * data.length);
                     data = "<blockquote><p>" + data[randnum].text + " </p></blockquote>" + "<cite>- " + data[randnum].author + "</cite>"
+                } else if (this.chat_tree['message'] === "getWeather()") {
+                    data = await getWeather();
+                    data = "<p>The location can also be inaccurate due to free API.So there can be a <span>  &#177 <span>5°C error</p>";
                 } else {
                     data = await eval(this.chat_tree['message']);
                     let randnum = Math.floor(Math.random() * data.articles.length);
@@ -115,6 +117,7 @@ class ChatTree {
             }
             resp += data;
             resp += "<br><br>Please input <b>Reset</b> to reset chat now";
+            document.getElementById("chatdiv2").innerHTML = " <span style='width: 100%; text-align: center; font-size: x-large; padding: 40px'><b>Send a simple hello message to begin</b></span>";
         } else {
             for (let i in this.chat_tree['child_msg']) {
                 resp += String(parseInt(i) + 1) + ". " + this.chat_tree['child_msg'][parseInt(i)] + "<br>";
@@ -123,6 +126,10 @@ class ChatTree {
         return resp;
     }
 }
+
+
+
+
 async function getJoke() {
     const response = await fetch('https://api.icndb.com/jokes/random');
     const jsonResp = await response.json();
@@ -132,6 +139,7 @@ async function getJoke() {
 async function getNewsIn() {
     const response = await fetch('https://gnews.io/api/v4/top-headlines?country=in&lang=en&pageSize=1&token=b28e3193c110763310d82930d4a3d05f');
     const jsonResp = await response.json();
+    console.log("in");
     return jsonResp;
 }
 async function getNews() {
@@ -145,9 +153,7 @@ async function motivation() {
 
     return jsonResp;
 }
-async function weather() {
-    const response = await fetch('https://type.fit/api/quotes');
-    const jsonResp = await response.json();
 
-    return jsonResp;
+async function getWeather() {
+    document.getElementById("chatdiv2").innerHTML = '<object type="text/html" data="weather.html" ></object>'
 }

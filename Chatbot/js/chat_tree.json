@@ -1,5 +1,5 @@
 {
-    "child_msg": ["Want to hear a joke ?", "What about some news ?", "Wanna get motivated ?", "Terminate chat"],
+    "child_msg": ["Want to hear a joke ?", "What about some news ?", "Wanna get motivated ?", "Weather", "Terminate chat"],
     "children": [{
 
             "message": "getJoke()",
@@ -19,6 +19,10 @@
         },
         {
             "message": "motivation()",
+            "type": "function"
+        },
+        {
+            "message": "getWeather()",
             "type": "function"
         }
     ]

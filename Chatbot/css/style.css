@@ -36,6 +36,11 @@ blockquote::after {
     vertical-align: -0.4em;
 }
 
+object {
+    width: 100%;
+    height: 100%;
+}
+
 blockquote p {
     display: inline;
 }
@@ -62,13 +67,14 @@ a:active {
 }
 
 #chatdiv {
-    width: 70%;
+    width: 60%;
     height: 100%;
     border: 1px solid lightgray;
+    background-color: #F2F5F8;
 }
 
 #chatdiv2 {
-    width: 30%;
+    width: 40%;
     height: 100%;
     border: 1px solid lightgray;
     display: flex;
