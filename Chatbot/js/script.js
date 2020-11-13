@@ -83,7 +83,9 @@ class ChatTree {
             resp += "Hey there buddy<br>";
         } else {
             if (("message" in this.chat_tree) && ((input.trim() === "Reset") || (input.trim() === "reset"))) {
+                document.getElementById("chatdiv2").innerHTML = " <span style='width: 100%; text-align: center; font-size: x-large; padding: 40px'><b>Send a simple hello message to begin</b></span>";
                 return this.init();
+
             }
             if (parseInt(input) - 1 === this.chat_tree['children'].length) {
                 return this.init();
@@ -95,6 +97,7 @@ class ChatTree {
         if ("message" in this.chat_tree) {
             let data;
             if (this.chat_tree['type'] === "function") {
+                document.getElementById("chatdiv2").innerHTML = " <span style='width: 100%; text-align: center; font-size: x-large; padding: 40px'><b>Send a simple hello message to begin</b></span>";
                 if (this.chat_tree['message'] === "getJoke()") {
                     data = await eval(this.chat_tree['message']);
                     data = data.value.joke;
@@ -117,7 +120,7 @@ class ChatTree {
             }
             resp += data;
             resp += "<br><br>Please input <b>Reset</b> to reset chat now";
-            document.getElementById("chatdiv2").innerHTML = " <span style='width: 100%; text-align: center; font-size: x-large; padding: 40px'><b>Send a simple hello message to begin</b></span>";
+
         } else {
             for (let i in this.chat_tree['child_msg']) {
                 resp += String(parseInt(i) + 1) + ". " + this.chat_tree['child_msg'][parseInt(i)] + "<br>";
