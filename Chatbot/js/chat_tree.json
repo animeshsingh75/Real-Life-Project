@@ -1,5 +1,5 @@
 {
-    "child_msg": ["Want to hear a joke ?", "What about some news ?", "Wanna get motivated ?", "Weather", "Terminate chat"],
+    "child_msg": ["Joke", "News", "Motivational Quotes", "Games", "Weather", "Terminate chat"],
     "children": [{
 
             "message": "getJoke()",
@@ -20,6 +20,26 @@
         {
             "message": "motivation()",
             "type": "function"
+        },
+        {
+            "child_msg": ["Snake Game", "Covid Fighter", "Mario", "Tic Tac Toe", "Terminate chat"],
+            "children": [{
+                    "message": "snake()",
+                    "type": "function"
+                },
+                {
+                    "message": "covid()",
+                    "type": "function"
+                },
+                {
+                    "message": "mario()",
+                    "type": "function"
+                },
+                {
+                    "message": "tic()",
+                    "type": "function"
+                }
+            ]
         },
         {
             "message": "getWeather()",

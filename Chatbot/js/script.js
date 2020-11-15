@@ -108,6 +108,18 @@ class ChatTree {
                 } else if (this.chat_tree['message'] === "getWeather()") {
                     data = await getWeather();
                     data = "<p>The location can also be inaccurate due to free API.So there can be a <span>  &#177 <span>5°C error</p>";
+                } else if (this.chat_tree['message'] === "snake()") {
+                    data = window.open("../Snake Game/index.html");
+                    data = "<p>The game will open in a new tab</p>";
+                } else if (this.chat_tree['message'] === "covid()") {
+                    data = window.open("../Covid Fighter/index.html");
+                    data = "<p>The game will open in a new tab</p>";
+                } else if (this.chat_tree['message'] === "mario()") {
+                    data = window.open("../Interactive Mario/index.html");
+                    data = "<p>The game will open in a new tab</p>";
+                } else if (this.chat_tree['message'] === "tic()") {
+                    data = window.open("../Tic Tac Toe/index.html");
+                    data = "<p>The game will open in a new tab</p>";
                 } else {
                     data = await eval(this.chat_tree['message']);
                     let randnum = Math.floor(Math.random() * data.articles.length);

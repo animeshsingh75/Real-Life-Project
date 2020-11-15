@@ -1,19 +1,28 @@
 body {
-    background-color: #293251;
     margin: 0;
     height: 100%;
-    overflow: hidden
+    background-color: #293251;
+    overflow: hidden;
+}
+
+html {
+    height: 100%;
+}
+
+.bg {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container-weather {
     width: 300px;
-    height: 10%;
-    background-color: #F4F9FF;
+    height: 40%;
     display: block;
     margin: auto;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    border-radius: 10px 10px 10px 10px;
+    margin-top: 30%;
+    margin-bottom: 40%;
     overflow: hidden;
     padding-bottom: 50px;
 }
@@ -41,7 +50,9 @@ body {
 .weather-container {
     width: 300px;
     height: 260px;
-    background-color: #F4F9FF;
+    background-color: rgba(244, 249, 255, 0.7);
+    padding-bottom: 20px;
+    border-radius: 10px 10px 10px 10px;
 }
 
 .weather-icon {
@@ -69,7 +80,7 @@ body {
     cursor: pointer;
 }
 
-.temperature-value span {
+.temperature-value p span {
     color: #293251;
     font-size: 0.5em;
 }
