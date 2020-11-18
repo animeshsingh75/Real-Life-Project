@@ -1,4 +1,5 @@
 onload = function() {
+
     var chat = {
         messageToSend: '',
         init: async function() {
@@ -61,6 +62,7 @@ onload = function() {
     };
     chat.init();
 };
+
 class ChatTree {
     constructor() {
 
@@ -81,6 +83,7 @@ class ChatTree {
         if (this.firstMsg === true) {
             this.firstMsg = false;
             resp += "Hey there buddy<br>";
+            document.getElementById("chatdiv2").innerHTML = "<span style='width: 100%; text-align: center; font-size: x-large; padding: 40px'><b>Enter a option number to select the option</b></span>";
         } else {
             if (("message" in this.chat_tree) && ((input.trim() === "Reset") || (input.trim() === "reset"))) {
                 document.getElementById("chatdiv2").innerHTML = " <span style='width: 100%; text-align: center; font-size: x-large; padding: 40px'><b>Send a simple hello message to begin</b></span>";
@@ -88,6 +91,7 @@ class ChatTree {
 
             }
             if (parseInt(input) - 1 === this.chat_tree['children'].length) {
+                document.getElementById("chatdiv2").innerHTML = " <span style='width: 100%; text-align: center; font-size: x-large; padding: 40px'><b>Send a simple hello message to begin</b></span>";
                 return this.init();
             }
             if (isNaN(parseInt(input)) || parseInt(input) <= 0 || parseInt(input) > this.chat_tree['children'].length + 1)
@@ -123,7 +127,7 @@ class ChatTree {
                 } else {
                     data = await eval(this.chat_tree['message']);
                     let randnum = Math.floor(Math.random() * data.articles.length);
-                    console.log(data.articles[0]);
+                    //here it will contain code for adding a template contained in news.js 
                     data = "<a href='" + data.articles[randnum].url + "'target='_blank'>" + data.articles[randnum].title + "</a><br><br>" + "<img class='center' src='" +
                         data.articles[randnum].image + "'>" + "<br><a href='" + data.articles[randnum].source.url + "'target='_blank'><cite>-" + data.articles[randnum].source.name + "</cite></a>";
                 }
@@ -132,7 +136,6 @@ class ChatTree {
             }
             resp += data;
             resp += "<br><br>Please input <b>Reset</b> to reset chat now";
-
         } else {
             for (let i in this.chat_tree['child_msg']) {
                 resp += String(parseInt(i) + 1) + ". " + this.chat_tree['child_msg'][parseInt(i)] + "<br>";

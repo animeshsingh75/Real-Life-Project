@@ -4,9 +4,6 @@ body {
     color: white;
 }
 
-
-/*Used to seperate the cell elements between each other */
-
 table {
     border-collapse: separate;
     border-spacing: 20px;

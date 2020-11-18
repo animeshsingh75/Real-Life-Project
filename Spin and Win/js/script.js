@@ -2,7 +2,7 @@ let prizes_config = {
     count: 12,
     prizes_names: ["3000 Credits", "35% Off", "Hard Luck", "70% OFF", "SwagPack",
         "100% OFF", "Netflix", "50% Off", "Amazon Voucher", "2 Extra Spin",
-        "CB Tshirt", "CB Book"
+        "Tshirt", "Book"
     ]
 }
 let config = {

@@ -118,7 +118,6 @@ button.onclick = function() {
         changeBoard(board)
     }
     xhrRequest.open('get', 'https://sugoku.herokuapp.com/board?difficulty=random')
-        //we can change the difficulty of the puzzle the allowed values of difficulty are easy, medium, hard and random
     xhrRequest.send()
 }
 
@@ -140,16 +139,13 @@ function issafe(board, r, c, data) {
     }
     return true;
 }
-// you can make a call to changeboard(board) function to update the state on the screen
+
 function solveSudokuHelper(board, r, c) {
 
-    //base case 
     if (r == 9) {
         changeBoard(board);
         return true;
     }
-
-    //other cases - write your code here
     if (c == 9) {
         return solveSudokuHelper(board, r + 1, 0);
     }
@@ -167,8 +163,6 @@ function solveSudokuHelper(board, r, c) {
         }
     }
     return false;
-    //finish your code here
-
 }
 
 function solveSudoku(board) {

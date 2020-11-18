@@ -1,5 +1,4 @@
 function load_images() {
-    //player,virus,gem
     enemy_image = new Image;
     enemy_image.src = "images/v2.png";
 

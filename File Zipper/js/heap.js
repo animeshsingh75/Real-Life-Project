@@ -1,7 +1,3 @@
-/**
- * Created by aarnavjindal on 30/03/20.
- */
-
 export { BinaryHeap }
 
 class BinaryHeap {
@@ -23,7 +19,6 @@ class BinaryHeap {
         return (this.size() === 0);
     }
 
-    //using iterative approach
     bubbleUp() {
         let index = this.size() - 1;
 
@@ -55,8 +50,6 @@ class BinaryHeap {
             right = 2 * index + 2,
             largest = index;
         const length = this.size();
-
-        // console.log(this.heap[left], left, length, this.heap[right], right, length, this.heap[largest]);
 
         if (left < length && this.heap[left][0] > this.heap[largest][0]) {
             largest = left
