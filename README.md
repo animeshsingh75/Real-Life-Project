@@ -13,20 +13,20 @@ are also included in this repository.Below are the link for the various project.
 [https://github.com/animeshsingh75/Real-Life-Project/tree/master/Chatbote](https://github.com/animeshsingh75/Real-Life-Project/tree/master/Chatbot)
 <br/>
 
-2.Chatlist-:This project is the basic simulation of how the insertion and deletion of messages works in a messaging app. It is implemented using LRU Cache.
+2.Chatlist-:This project is the basic simulation of how the insertion and deletion of messages works in a messaging app. It is implemented using LRU Cache.<br/>
 https://github.com/animeshsingh75/Real-Life-Project/tree/master/Chatlist<br/>
 
 3.Contact List-:This project is the implementation of a contact list present in our phones.So the operation it performs are insertion/deletion and searching of data.
-It also shows the real life application of tries.
+It also shows the real life application of tries.<br/>
 https://github.com/animeshsingh75/Real-Life-Project/tree/master/Contact%20List<br/>
 
 4.Covid Fighter-:
-It is a flappy bird type of game.In which we have have escape the enemy and reach the finish line.It is only implemented using arrays.Go ahead and try to beat the virus.
+It is a flappy bird type of game.In which we have have escape the enemy and reach the finish line.It is only implemented using arrays.Go ahead and try to beat the virus.<br/>
 https://github.com/animeshsingh75/Real-Life-Project/tree/master/Covid%20Fighter<br/>
 
 5.File Zipper-:
 This project is based on a very popular compression technique,i.e, Huffman Encoding which is implemented using Greedy algorithm.In this project project you you enter a txt file 
-and encode the file to reduce the size of the file.It also calculates the compression ratio of normal to encode file.
+and encode the file to reduce the size of the file.It also calculates the compression ratio of normal to encode file.<br/>
 https://github.com/animeshsingh75/Real-Life-Project/tree/master/File%20Zipper<br/>
 
 6.Frog Jump-:
