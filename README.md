@@ -14,12 +14,10 @@ are also included in this repository.Below are the link for the various project.
 <br/>
 
 2.Chatlist-:This project is the basic simulation of how the insertion and deletion of messages works in a messaging app. It is implemented using LRU Cache.
-
 https://github.com/animeshsingh75/Real-Life-Project/tree/master/Chatlist<br/>
 
 3.Contact List-:This project is the implementation of a contact list present in our phones.So the operation it performs are insertion/deletion and searching of data.
 It also shows the real life application of tries.
-
 https://github.com/animeshsingh75/Real-Life-Project/tree/master/Contact%20List<br/>
 
 4.Covid Fighter-:
@@ -27,6 +25,8 @@ It is a flappy bird type of game.In which we have have escape the enemy and reac
 https://github.com/animeshsingh75/Real-Life-Project/tree/master/Covid%20Fighter<br/>
 
 5.File Zipper-:
+This project is based on a very popular compression technique,i.e, Huffman Encoding which is implemented using Greedy algorithm.In this project project you you enter a txt file 
+and encode the file to reduce the size of the file.It also calculates the compression ratio of normal to encode file.
 https://github.com/animeshsingh75/Real-Life-Project/tree/master/File%20Zipper<br/>
 
 6.Frog Jump-:
