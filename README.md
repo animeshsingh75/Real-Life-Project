@@ -7,23 +7,22 @@ are also included in this repository.Below are the link for the various project.
  <br/></p>
 
 
-* <a href="#link-to-the-project ">Link to the various projects  </a>
+<h2 align="center">Link to the projects</h2>
 
-
-
-
-## Link to the projects
-
-1.Chatbot-:This is an interactive bot which can tell international/nation news,weather,jokes,motivation quotes as well as play games.It uses various APIs like open weather,google news,etc.<br/>
+1.Chatbot-:This is an interactive bot which can tell international/national news,weather,jokes,motivation quotes as well as play games.It uses various APIs like open weather,google news,etc.<br/>
 https://github.com/animeshsingh75/Real-Life-Project/tree/master/Chatbot<br/>
 
-2.Chatlist-:
+2.Chatlist-:This project is the basic simulation of how the insertion and deletion of messages works in a messaging app. It is implemented using LRU Cache.
+
 https://github.com/animeshsingh75/Real-Life-Project/tree/master/Chatlist<br/>
 
-3.Contact List-:
+3.Contact List-:This project is the implementation of a contact list present in our phones.So the operation it performs are insertion/deletion and searching of data.
+It also shows the real life application of tries.
+
 https://github.com/animeshsingh75/Real-Life-Project/tree/master/Contact%20List<br/>
 
 4.Covid Fighter-:
+It is a flappy bird type of game.In which we have have escape the enemy and reach the finish line.It is only implemented using arrays.Go ahead and try to beat the virus.
 https://github.com/animeshsingh75/Real-Life-Project/tree/master/Covid%20Fighter<br/>
 
 5.File Zipper-:
