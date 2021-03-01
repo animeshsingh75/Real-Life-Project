@@ -10,7 +10,8 @@ are also included in this repository.Below are the link for the various project.
 <h2 align="center">Link to the projects</h2>
 
 1.Chatbot-:This is an interactive bot which can tell international/national news,weather,jokes,motivation quotes as well as play games.It uses various APIs like open weather,google news,etc.<br/>
-https://github.com/animeshsingh75/Real-Life-Project/tree/master/Chatbot<br/>
+[https://github.com/animeshsingh75/Real-Life-Project/tree/master/Chatbote](https://github.com/animeshsingh75/Real-Life-Project/tree/master/Chatbot)
+<br/>
 
 2.Chatlist-:This project is the basic simulation of how the insertion and deletion of messages works in a messaging app. It is implemented using LRU Cache.
 
