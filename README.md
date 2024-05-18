@@ -27,34 +27,34 @@ and encode the file to reduce the size of the file.It also calculates the compre
 [https://github.com/animeshsingh75/Real-Life-Project/tree/master/File%20Zipper](https://github.com/animeshsingh75/Real-Life-Project/tree/master/File%20Zipper)<br/>
 
 6.Frog Jump-:
-https://github.com/animeshsingh75/Real-Life-Project/tree/master/Frog%20Jump<br/>
+[https://github.com/animeshsingh75/Real-Life-Project/tree/master/Frog%20Jump](https://github.com/animeshsingh75/Real-Life-Project/tree/master/Frog%20Jump)<br/>
 
 7.Interactive Mario-:
-https://github.com/animeshsingh75/Real-Life-Project/tree/master/Interactive%20Mario<br/>
+[https://github.com/animeshsingh75/Real-Life-Project/tree/master/Interactive%20Mario](https://github.com/animeshsingh75/Real-Life-Project/tree/master/Interactive%20Mario)<br/>
 
 8.Mario-:
-https://github.com/animeshsingh75/Real-Life-Project/tree/master/Mario<br/>
+[https://github.com/animeshsingh75/Real-Life-Project/tree/master/Mario](https://github.com/animeshsingh75/Real-Life-Project/tree/master/Mario)<br/>
 
 9.Photo Editor-:
-https://github.com/animeshsingh75/Real-Life-Project/tree/master/Photo%20Editor<br/>
+[https://github.com/animeshsingh75/Real-Life-Project/tree/master/Photo%20Editor](https://github.com/animeshsingh75/Real-Life-Project/tree/master/Photo%20Editor)<br/>
 
 10.Snake Game-:
-https://github.com/animeshsingh75/Real-Life-Project/tree/master/Snake%20Game<br/>
+[https://github.com/animeshsingh75/Real-Life-Project/tree/master/Snake%20Game](https://github.com/animeshsingh75/Real-Life-Project/tree/master/Snake%20Game)<br/>
 
 11.Spin and Win-:
-https://github.com/animeshsingh75/Real-Life-Project/tree/master/Spin%20and%20Win<br/>
+[https://github.com/animeshsingh75/Real-Life-Project/tree/master/Spin%20and%20Win](https://github.com/animeshsingh75/Real-Life-Project/tree/master/Spin%20and%20Win)<br/>
 
 12.SplitWise-:
-https://github.com/animeshsingh75/Real-Life-Project/tree/master/SplitWise<br/>
+[https://github.com/animeshsingh75/Real-Life-Project/tree/master/SplitWise](https://github.com/animeshsingh75/Real-Life-Project/tree/master/SplitWise)<br/>
 
 13.Suduko Solver-:
-https://github.com/animeshsingh75/Real-Life-Project/tree/master/Sudoku%20Solver<br/>
+[https://github.com/animeshsingh75/Real-Life-Project/tree/master/Sudoku%20Solver](https://github.com/animeshsingh75/Real-Life-Project/tree/master/Sudoku%20Solver)<br/>
 
 14.Text Editor-:
-https://github.com/animeshsingh75/Real-Life-Project/tree/master/Text%20Editor/<br/>
+[https://github.com/animeshsingh75/Real-Life-Project/tree/master/Text%20Editor](https://github.com/animeshsingh75/Real-Life-Project/tree/master/Text%20Editor)<br/>
 
 15.Tic Tac Toe-:
-https://github.com/animeshsingh75/Real-Life-Project/tree/master/Tic%20Tac%20Toe<br/>
+[https://github.com/animeshsingh75/Real-Life-Project/tree/master/Tic%20Tac%20Toe](https://github.com/animeshsingh75/Real-Life-Project/tree/master/Tic%20Tac%20Toe)<br/>
 
 16.Travel Plan-:
-https://github.com/animeshsingh75/Real-Life-Project/tree/master/Travel%20Plan<br/>
+[https://github.com/animeshsingh75/Real-Life-Project/tree/master/Travel%20Plan](https://github.com/animeshsingh75/Real-Life-Project/tree/master/Travel%20Plan)<br/>
