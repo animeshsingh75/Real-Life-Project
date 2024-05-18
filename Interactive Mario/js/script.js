@@ -1,6 +1,3 @@
-console.log("Script loaded");
-console.log(Phaser); // Should log the Phaser object
-console.log(Phaser.AUTO); // Should log the value of Phaser.AUTO (typically 3)
 let config = {
   type: Phaser.WEBGL,
   scale: {
